@@ -12,11 +12,11 @@ public class RPG : Weapon
         {
             _recharge = !_recharge;
             Instantiate(Bullet, shootPoint.position, Quaternion.identity);
-            Invoke("ReloadWeapon", _cooldown);
+            Invoke(nameof(Reload), _cooldown);
         }
     }
     
-    private void ReloadWeapon()
+    private void Reload()
     {
         _recharge = !_recharge;
     }
